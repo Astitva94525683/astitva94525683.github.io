@@ -977,8 +977,8 @@ ORDER BY bubbles_per_rod DESC;</textarea>
         <div class="panel">
           <div class="panel-h"><span>On real sites, from the project's demo video</span><span class="fb-note">Highlights at 2× speed, no sound</span></div>
           <div class="panel-b video-wrap">
-            <video id="cl-video" controls muted playsinline preload="none" poster="media/clone-highlights-poster.jpg">
-              <source src="media/clone-highlights.mp4" type="video/mp4">
+            <video id="cl-video" controls muted playsinline preload="none" poster="clone-highlights-poster.jpg">
+              <source src="clone-highlights.mp4" type="video/mp4">
             </video>
             <div class="stack-v" style="gap:10px">
               <div class="chapters" id="cl-chapters"></div>
@@ -1062,7 +1062,7 @@ ORDER BY bubbles_per_rod DESC;</textarea>
     <div class="creds">
       <article class="award tilt">
         <figure>
-          <img src="media/stl-ai-award.jpg" alt="Award ceremony at STL: a group holding a large cheque for ₹1,00,000" width="941" height="628" loading="lazy">
+          <img src="stl-ai-award.jpg" alt="Award ceremony at STL: a group holding a large cheque for ₹1,00,000" width="941" height="628" loading="lazy">
           <figcaption>
             <strong>STL AI Awards, ₹1,00,000</strong>
             <span>Awarded to Akris, the agent that automates plant data analysis. September 2026.</span>
@@ -2185,8 +2185,8 @@ vid.addEventListener('timeupdate', () => {
 });
 $('#cl-full').addEventListener('click', () => {
   fullMode = !fullMode;
-  vid.pause(); vid.innerHTML = `<source src="media/${fullMode ? 'clone-walkthrough' : 'clone-highlights'}.mp4" type="video/mp4">`;
-  vid.poster = `media/${fullMode ? 'clone-walkthrough' : 'clone-highlights'}-poster.jpg`; vid.muted = !fullMode; vid.load();
+  vid.pause(); vid.innerHTML = `<source src="${fullMode ? 'clone-walkthrough' : 'clone-highlights'}.mp4" type="video/mp4">`;
+  vid.poster = `${fullMode ? 'clone-walkthrough' : 'clone-highlights'}-poster.jpg`; vid.muted = !fullMode; vid.load();
   if (fullMode) vid.play().catch(() => {});
   $('#cl-full').innerHTML = fullMode ? '<svg aria-hidden="true"><use href="#i-play"/></svg>Back to the 74-second highlights' : '<svg aria-hidden="true"><use href="#i-play"/></svg>Play the full 8.5-minute walkthrough with narration';
   vid.closest('.panel').querySelector('.panel-h .fb-note').textContent = fullMode ? 'Full walkthrough, with narration' : 'Highlights at 2× speed, no sound';
